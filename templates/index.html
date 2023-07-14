@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Threads App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      {% for row in threads %}
+      <p>{{ row[0] }}</p>
+      <!-- {% if row[1] is not none and row[2] is none %}
+      <img src="{{ row[1] }}" />
+      {% endif %} {% if row[2] is not none %}
+      <video controls>
+        <source src="{{ row[2] }}" />
+      </video>
+      {% endif %} -->
+      {% endfor %}
+    </div>
+  </body>
+</html>
