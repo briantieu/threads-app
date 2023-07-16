@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <p>User not found! Try again</p>
+    <p>User not found or is private or has no threads! Try again</p>
     <div>
       <form action="{{ url_for('results') }}" method="post">
         <input type="text" name="username" />

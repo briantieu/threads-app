@@ -22,6 +22,10 @@ def all_threads(username):
     user = threads.public_api.get_user(id=user_id)
     user_threads = threads.public_api.get_user_threads(id=user_id)
 
+    # user is private
+    if user_threads["data"] is None:
+        return []
+
     threads_list = user_threads["data"]["mediaData"]["threads"]
 
     # filter out rethreads
