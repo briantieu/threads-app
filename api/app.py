@@ -11,15 +11,6 @@ threads = Threads()
 @app.route('/results', methods=['POST'])
 def results():
     username = request.form['username']
-
-    # remove
-    try:
-        user_id = threads.public_api.get_user_id(username=username)
-        return str(user_id)
-    except Exception as e:
-        return str(e)
-
-
     return make_html_from_threads(sort_threads_by_likes(all_threads(username)))
 
 def all_threads(username):
