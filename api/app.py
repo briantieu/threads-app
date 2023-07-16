@@ -13,11 +13,11 @@ def results():
     username = request.form['username']
 
     # remove
-    try:
-        user_id = threads.public_api.get_user_id(username=username)
-        return str(user_id)
-    except:
-        return "no user"
+    # try:
+    user_id = threads.public_api.get_user_id(username=username)
+    return str(user_id)
+    # except:
+    #     return "no user"
 
 
     return make_html_from_threads(sort_threads_by_likes(all_threads(username)))
