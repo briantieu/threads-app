@@ -16,7 +16,8 @@ def results():
 def all_threads(username):
     try:
         user_id = threads.public_api.get_user_id(username=username)
-    except:
+    except Exception as e:
+        return str(e)
         return []
 
     user = threads.public_api.get_user(id=user_id)
